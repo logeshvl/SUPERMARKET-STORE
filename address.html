@@ -1,0 +1,75 @@
+<html>
+<head>
+  <link rel="stylesheet" href="Mytheme.css">
+<script type="text/javascript">
+function Nullfield(){
+    if(confirm("Confirm your order?")==true){
+        alert("Order Placed! Thank you for shopping with us 😊.");
+        var name = document.getElementById("usrname").value;
+        var cnum = document.getElementById("phonenum").value;
+        var bknum = document.getElementById("bkupnum").value;
+        var address = document.getElementById("address").value;
+        window.localStorage.setItem("name", name);
+        window.localStorage.setItem("cnum", cnum);
+        window.localStorage.setItem("bknum", bknum);
+        window.localStorage.setItem("address", address);
+        return true;
+      }
+      else{
+        alert("Back to shop?<<<");
+        window.location.assign("file:///C:/Users/loges/OneDrive/Desktop/shop.html");
+    }
+  }
+
+  function lol(){
+    alert("Now you wanna check?!");
+  }
+
+/*function check() {
+  name = window.localStorage.getItem("name");
+  if(name!=null){
+    if(confirm("Continue with previous data??")==true){
+      document.getElementById("usrname").value=name;
+      document.getElementById("phonenum").value=window.localStorage.getItem("cnum");
+      document.getElementById("bkupnum").value=window.localStorage.getItem("bknum");
+      document.getElementById("address").value=window.localStorage.getItem("address");
+    }
+  }
+}*/
+
+</script>
+</head>
+<body>
+  <div class="divs groce ">
+          <a class="split" onclick="return lol()"><b>GRAN GROCERIES</b></a>
+          <a href="shop.html"><b>Shop</b></a>
+          <a href="#contact"><b>Contact</b></a>
+          <a href="#about"><b>About</b></a>
+          <a href="main.html"><b>Home</b></a>
+  </div>
+  <div class="divtit groce">
+    <h3>Please Enter Your Address: </h3>
+    <form name="mform" onsubmit="return Nullfield()">
+    <table>
+      <tr>
+        <td><label>Name: </label></td>
+        <td><input type="text" name="usrname" required/></td>
+      </tr>
+      <tr>
+        <td><label>Contact Number: </label></td>
+        <td><input type="tel" name="phonenum" placeholder="9876543210" pattern="^[6-9]\d{9}$" required/></td>
+      </tr>
+      <tr>
+        <td><label>Backup Contact: </label></td>
+        <td><input type="tel" name="bkupnum" placeholder="9876543210" pattern="^[6-9]\d{9}$"/></td>
+      </tr>
+      <tr>
+        <td><label>Address: </label></td>
+        <td><textarea name="address" rows=7 cols=25 required/></textarea></td>
+      </tr>
+    </table>
+      <center><input type="submit" value="Place Order"/>&nbsp<input type="reset"/>
+  </form>
+  </div>
+</body>
+</html>
